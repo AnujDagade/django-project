@@ -1,17 +1,36 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
+
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
-	<link rel = "stylesheet" href = "{% static 'css/quiz.css' %}">
-	<title>Home</title>
+	<link rel="stylesheet" href="{% static 'css/quiz.css' %}">
+	<link rel="stylesheet" href="{% static 'css/nav.css' %}">
+	<title>QuizWhiz</title>
 </head>
+
 <body>
-	<a style = "display: block;text-align: right; color: darkblue; margin-right: 20%" href = "/admin"> Go to Admin </a>
-	<div id = "container">
-		<a class = "button" href = "/login"> Go to Quiz </a>
-		<img src = "{% static 'img/frontlineimage.png' %}" style = "width: 98%;border: 8px solid #A3B00D;">
-		<h2 style = "text-align: right; margin-right: 100px;"><u>Designed and Developed by </u><h1 style = "text-align: right;margin-right: 130px;color: white;"><a href = "https://itsourcecode.com/">ITSOURCECODE.COM</a></h1></h2>
+
+	<header>
+		<div class='brand'>
+			QuizWhiz
+		</div>
+		<nav>
+			<a href="/">Home</a>
+			<a href="questions/">Quiz</a>
+			<a href="admin/">Create Quiz</a>
+		</nav>
+	</header>
+
+	<div id="home-container">
+		<div id="hero">
+			<h1>Welcome to QuizWhiz!</h1>
+			<p>Unleash your curiosity and test your knowledge across all subjects with QuizWhiz. Whether you're a science enthusiast, a history buff, a math whiz, or a literature lover, we've got something for everyone.</p>
+			<p>Not only can you take quizzes in a variety of topics, but you can also create your own quizzes to challenge your friends and other QuizWhiz users. It's a fun and interactive way to learn and share your knowledge with others.</p>
+			<p>Ready to get started? Click on 'Quiz' to take a quiz, or 'Create Quiz' to make your own. Happy quizzing!</p>
+		</div>
 	</div>
 </body>
+
 </html>

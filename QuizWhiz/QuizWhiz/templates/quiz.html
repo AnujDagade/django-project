@@ -4,17 +4,30 @@
 <head>
 	<link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
 	<title>Quiz Application</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel = "stylesheet" href = "{% static 'css/quiz.css' %}">
+	<link rel = "stylesheet" href = "{% static 'css/nav.css' %}">
 	<script src = "{% static 'js/quiz.js' %}"></script>
+	
 </head>
 <body>
+	<header>
+		<div class='brand'>
+			QuizWhiz
+		</div>
+		<nav>
+			<a href="/">Home</a>
+			<a href="login/">Quiz</a>
+			<a href="admin/">Create Quiz</a>
+		</nav>
+		
+		
+	</header>
 	<div id = "container">
-		<header>
-			<a href="/" class = "button">Go Back</a> 
-			<h1>Test Question</h1>
-		</header>
+		
 
 		<section>
+			<h1>Test Question</h1>
 			<!-- <p>{% for q in questions %}'{{ q.answer }}'{% endfor %}</p> -->
 			<div id = "results"></div>
 			<div id="wrong-answers"></div>
@@ -30,14 +43,13 @@
 			{% endfor %}
 
 				<br><br>
-				<input type = "submit" value = "Submit Answer">
+				<button class="button">Submit</button>
+				<a href="/questions" id="reset">Reset</a>
 			</form>
 			<br><br>
-		<a href="/questions" class="button">Reset</a>
+		
 		</section>
-		<footer>
-			<p>Copyright &copy;2020, Allright Reserverd</p>
-		</footer>
+		
 	</div>
 
 </body>
