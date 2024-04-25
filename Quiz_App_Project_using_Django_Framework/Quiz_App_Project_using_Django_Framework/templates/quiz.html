@@ -17,6 +17,7 @@
 		<section>
 			<!-- <p>{% for q in questions %}'{{ q.answer }}'{% endfor %}</p> -->
 			<div id = "results"></div>
+			<div id="wrong-answers"></div>
 			<form name = "quizForm" onsubmit = "submitAnswers(event,answers = [{% for q in questions %}'{{ q.answer }}',{% endfor %}])">
 			{% for q in questions %}
 				<h3> {{ q.id }}.  {{ q.question }}</h3>
