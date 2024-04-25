@@ -1,5 +1,5 @@
 
-function getName(){
+function getName() {
 	login = document.getElementById("login").value;
 	alert("Hi, " + login);
 	return login;
@@ -8,7 +8,7 @@ function getName(){
 
 
 
-function submitAnswers(event, answers){
+function submitAnswers(event, answers) {
 	event.preventDefault();
 
 
@@ -17,27 +17,27 @@ function submitAnswers(event, answers){
 	var choice = []
 	wrongAnswers = []
 
-	
-	for(var i = 1; i <= total; i++){
-		
-		choice[i] = document.forms["quizForm"]["q"+i].value;
+
+	for (var i = 1; i <= total; i++) {
+
+		choice[i] = document.forms["quizForm"]["q" + i].value;
 	}
- 
 
 
-	for(i = 1; i <= total; i++){
-		if(choice[i] == null || choice[i] == ''){
+
+	for (i = 1; i <= total; i++) {
+		if (choice[i] == null || choice[i] == '') {
 			alert('you missed question ' + i);
 			return false;
 		}
 	}
 
 
-	
-	for(i = 1; i <= total; i++){
-		if(choice[i] == answers[i - 1]){
+
+	for (i = 1; i <= total; i++) {
+		if (choice[i] == answers[i - 1]) {
 			score++;
-		}else{
+		} else {
 			wrongAnswers.push(i);
 		}
 	}
@@ -45,14 +45,16 @@ function submitAnswers(event, answers){
 	//Display Result
 	var results = document.getElementById('results');
 	results.innerHTML = "<h3>You scored <span>" + score + "</span> out of <span>" + total + "</span></h3>"
-	
+
 	let wrongAnsEle = document.getElementById('wrong-answers');
-	wrongAnsEle.innerHTML = `<h3>Wrong Answers: </h3>
+	if (wrongAnswers.length > 0) {
+		wrongAnsEle.innerHTML = `<h3>Wrong Answers: </h3>
 	<ul>
 	${wrongAnswers.map((ans) => `<li>Question ${ans}</li>`).join('')}
 	</ul>`;
+	}
 
-	setTimeout(()=>{
+	setTimeout(() => {
 		window.scrollTo(0, 0);
 	})
 
