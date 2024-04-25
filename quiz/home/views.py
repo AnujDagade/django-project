@@ -8,17 +8,20 @@ from .models import *
 
 import random
 
+
+
 def home(request):
     context = {'catgories': Types.objects.all()}
     
     if request.GET.get('gfg'):
-        return redirect(f"/quiz/?gfg={request.GET.get('gfg')}")
+         return redirect(f"/quiz/?gfg={request.GET.get('gfg')}")
     
     return render(request, 'home.html', context)
 
 def quiz(request):
-    context = {'gfg': request.GET.get('gfg')}
-    return render(request, 'quiz.html', context)
+     context = {'gfg': request.GET.get('gfg')}
+     return render(request, 'quiz.html', context)
+
 
 
 
