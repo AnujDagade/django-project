@@ -4,8 +4,10 @@ function getName(){
 	alert("Hi, " + login);
 	return login;
 }
-function submitAnswers(answers){
+function submitAnswers(event, answers){
+	event.preventDefault();
 
+	
 	var total = answers.length;
 	var score = 0;
 	var choice = []
@@ -69,6 +71,6 @@ function submitAnswers(answers){
 	results.innerHTML = "<h3>You scored <span>" + score + "</span> out of <span>" + total + "</span></h3>"
 	alert("You scored " + score + " out of " + total);
 
-	return false;
+	
 }
 
