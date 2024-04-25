@@ -2,6 +2,10 @@
 
 This is a web application built with Django.
 
+# Screenshots
+<img src="/assets/home.png" alt="Screenshot 1" width="600"/>
+<img src="/assets/quiz.png" alt="Screenshot 2" width="600"/>
+
 ## Prerequisites
 
 Before you begin, ensure you have met the following requirements:
